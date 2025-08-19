@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/model">Model</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Ames Housing Prediction</h1>
+    </header>
+    <main>
+      <section>
+        <h2>About</h2>
+        <p>This is my housing price prediction project by Alex Berger. The goals of this project is to clean and process 
+          housing data from Ames, Iowa then formulate a model to predict further new data. The project data analysis 
+          and model development were done in Jupyter Notebook which will be shown in snippets below. The model in this application uses a Keras neural network.
+        </p>
+        <figure>
+          <img src="../static/pic1.png" alt="Image 1">
+          <figcaption>This picture shows the first few rows of the data set and the features that the data set includes. There are 2,930 entries in the data set.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic2.png" alt="Image 2">
+          <figcaption>This image shows the subfeatures of the categorical features and the features that were dropped before model prep because they were either
+            too confusing for model deployment or they were not of importance. There were 82 features before, that was reduced to 19.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic3.png" alt="Image 3">
+          <figcaption>This image shows the amount of missing values in the data set</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic4.png" alt="Image 4">
+          <figcaption>This picture shows the mean of the numerical features of the data set. Below that shows a function to get outliers from the data set and then
+            we can see the values of the each numerical feature at each quantile. At the bottem of the picture it shows the numer of outliers in the data that fall above the
+            75th quantile and below the 25th quantile. There are 398 outliers.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic5.png" alt="Image 4">
+          <figcaption>This image shows the means after removing outliers and then displaying basic statisics on the features</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic6.png" alt="Image 4">
+          <figcaption>This image shows a visual correlation matrix</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic7.png" alt="Image 4">
+          <figcaption>This is a plot of the neighborhoods in the data set and there frequencies. Because location is a very important aspect of predicting home prices
+            it is important to see how neighborhood affects the data.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic8.png" alt="Image 4">
+          <figcaption>In this graph we can see which neighborhoods are more expensive and which are cheaper as well as being able to see there IQR ranges.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic9.png" alt="Image 4">
+          <figcaption>In this plot we examine housing styles of the data, we can see that '1story' is the most popular by far then '2story' but the other house styles draw
+            confussion because I am unsure what they mean in the real-world.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic10.png" alt="Image 4">
+          <figcaption>This plot shows the feature 'Overall Qual'. Most of the values are for 5 and then increases down. There is strong correlation between 
+            this feature and sale price
+            which is shown later.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic11.png" alt="Image 4">
+          <figcaption>This plot shows the 'Half Bath' feature and what is intresting about this feature is that the majority of the values are in 0 half baths, I was expecting 
+            houses to have more half baths.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic12.png" alt="Image 4">
+          <figcaption>This plot shows the distribution of values for 'SalePrice'.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic13.png" alt="Image 4">
+          <figcaption>This plot shows the regression line plot of lot area against sale price. There is strong linear correlation.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic14.png" alt="Image 4">
+          <figcaption>This plot shows the regression line plot for total basement sqft against sale price and also shows strong correlation with less noise in the points</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic15.png" alt="Image 4">
+          <figcaption>This regression line plot of ground living area against sale price shows even stronger correlation however, a little more noise is the data but they still
+            seem evenly distributated.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic16.png" alt="Image 4">
+          <figcaption>Correlation matrix of the features.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic17.png" alt="Image 4">
+          <figcaption>Start of the pipeline section of the notebook and where the model development starts. It first starts with a gradient boosted regressor model 
+            which performed very well on the data.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic18.png" alt="Image 4">
+          <figcaption>The next model for the pipeline is a random forest model which performed similar to the GDR model.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic19.png" alt="Image 4">
+          <figcaption>This model is a support vecter regressor for the pipeline. This model performed well after hyperparameter tuning.</figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic20.png" alt="Image 4">
+          <figcaption>This model is a neural network from Sklearn which performed okay, I would not use this model as is over the other but the model still performs
+            well on the test data.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic21.png" alt="Image 4">
+          <figcaption>This image shows the linear regression model that came up with an accuracy of 92.2% which is better than all the rest of the models. Would use this model in
+            application deployment because it is simply the best way I think to represent any housing data but I still wanted to build another neural network.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic22.png" alt="Image 4">
+          <figcaption>This is the nerual network that is being used for the application currently. The nerual network performs very well after test aganist the linear model and found that this
+            nerual network works just as well as the linear regression model. </figcaption>
+        </figure>
+        <figure>
+          <img src="../static/pic23.png" alt="Image 4">
+          <figcaption>Graph of the epochs converging</figcaption>
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>
